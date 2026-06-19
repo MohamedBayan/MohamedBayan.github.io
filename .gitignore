@@ -1,0 +1,10 @@
+# Source assets (the converted profile.jpg is what ships)
+IMG_1851.HEIC
+*.HEIC
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
