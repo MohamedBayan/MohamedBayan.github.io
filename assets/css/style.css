@@ -123,6 +123,7 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
 /* ---------- Hero ---------- */
 .hero { padding: 72px 0 56px; }
 .hero__inner { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: center; }
+.hero__photo { display: flex; flex-direction: column; align-items: center; gap: 16px; }
 .hero__photo img {
   width: 240px; height: 240px; object-fit: cover; border-radius: 24px;
   box-shadow: var(--shadow); border: 4px solid var(--surface);
@@ -137,8 +138,8 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
 .lead { font-size: 1.08rem; color: var(--text); max-width: 64ch; margin-bottom: 14px; }
 .lead--muted { color: var(--text-muted); font-size: 1rem; }
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin: 26px 0 18px; }
-.hero__links { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; }
-.hero__links a { font-weight: 600; font-size: .95rem; }
+.hero__links { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; }
+.hero__links a { font-weight: 600; font-size: .92rem; }
 
 /* ---------- Stats ---------- */
 .stats {
@@ -161,6 +162,8 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
   background: var(--accent); margin-top: 10px;
 }
 .section__intro { color: var(--text-muted); max-width: 70ch; margin-bottom: 40px; font-size: 1.02rem; }
+.section__title--sub { font-size: 1.35rem; margin-top: 56px; margin-bottom: 24px; }
+.section__title--sub::after { height: 3px; width: 40px; }
 
 /* ---------- Cards ---------- */
 .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -181,19 +184,30 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
 }
 .card--project .pub__links { margin-top: auto; }
 
+/* ---------- News ---------- */
+.news { list-style: none; display: flex; flex-direction: column; }
+.news__item {
+  display: grid; grid-template-columns: 110px 1fr; gap: 20px; align-items: baseline;
+  padding: 16px 4px; border-bottom: 1px solid var(--border);
+}
+.news__item:last-child { border-bottom: none; }
+.news__date { font-weight: 700; color: var(--accent); font-size: .9rem; }
+.news__text { color: var(--text); }
+
 /* ---------- Publications ---------- */
-.pubs { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.pub-group { margin-bottom: 30px; }
+.pub-group__year {
+  font-size: 1.05rem; font-weight: 800; color: var(--text-muted);
+  letter-spacing: .04em; margin-bottom: 14px; padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+.pubs { list-style: none; display: flex; flex-direction: column; gap: 16px; }
 .pub {
-  display: grid; grid-template-columns: 64px 1fr; gap: 20px;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 22px 24px; transition: border-color .15s, box-shadow .15s;
+  padding: 20px 24px; transition: border-color .15s, box-shadow .15s;
 }
 .pub:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); box-shadow: var(--shadow); }
-.pub__year {
-  font-weight: 800; color: var(--accent); font-size: .95rem;
-  border-right: 2px solid var(--border); padding-right: 8px;
-}
-.pub__title { font-size: 1.1rem; margin-bottom: 6px; }
+.pub__title { font-size: 1.08rem; margin-bottom: 6px; }
 .pub__authors { color: var(--text-muted); font-size: .92rem; margin-bottom: 8px; }
 .pub__venue { font-size: .92rem; color: var(--text); margin-bottom: 10px; }
 .badge {
@@ -208,6 +222,44 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
   border: 1px solid var(--border); border-radius: 8px; color: var(--text);
 }
 .pub__links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.cite-btn {
+  font-family: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
+  padding: 5px 12px; border: 1px solid var(--border); border-radius: 8px;
+  background: transparent; color: var(--text); transition: border-color .15s, color .15s;
+}
+.cite-btn:hover { border-color: var(--accent); color: var(--accent); }
+.bibtex {
+  display: none; margin-top: 12px; padding: 14px 16px; border-radius: 10px;
+  background: var(--bg-alt); border: 1px solid var(--border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .8rem; line-height: 1.55; color: var(--text); white-space: pre;
+  overflow-x: auto; direction: ltr; text-align: left;
+}
+.bibtex.open { display: block; }
+
+/* ---------- Experience / Education timeline ---------- */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.timeline { list-style: none; position: relative; margin-bottom: 36px; }
+.timeline__item {
+  position: relative; padding-left: 22px; padding-bottom: 22px;
+  border-left: 2px solid var(--border);
+}
+.timeline__item:last-child { padding-bottom: 0; }
+.timeline__item::before {
+  content: ""; position: absolute; left: -7px; top: 4px; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--accent); border: 3px solid var(--bg-alt);
+}
+.timeline__top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.timeline__role { font-weight: 700; font-size: 1.02rem; }
+.timeline__date { font-size: .85rem; color: var(--text-muted); white-space: nowrap; }
+.timeline__org { color: var(--accent); font-size: .92rem; font-weight: 600; margin: 2px 0 6px; }
+.timeline__desc { color: var(--text-muted); font-size: .94rem; }
+.awards { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.awards li {
+  padding-left: 22px; position: relative; color: var(--text-muted); font-size: .96rem;
+}
+.awards li::before { content: "🏆"; position: absolute; left: 0; top: 0; font-size: .9rem; }
+.awards li b { color: var(--text); }
 
 /* ---------- Contact ---------- */
 .contact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -231,26 +283,24 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
   .hero__inner { grid-template-columns: 1fr; gap: 28px; text-align: center; }
   .hero__photo { justify-self: center; }
   .lead, .section__intro { margin-left: auto; margin-right: auto; }
-  .hero__actions, .hero__links { justify-content: center; }
+  .hero__actions { justify-content: center; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .cards, .cards--projects, .contact { grid-template-columns: 1fr 1fr; }
+  .two-col { grid-template-columns: 1fr; gap: 24px; }
 }
 
 /* ---------- RTL (Arabic) ---------- */
 [dir="rtl"] body { line-height: 1.85; }
 [dir="rtl"] .section__title::after { margin-left: auto; }
-[dir="rtl"] .pub { grid-template-columns: 1fr 64px; }
-[dir="rtl"] .pub__year { order: 2; border-right: none; border-left: 2px solid var(--border); padding-right: 0; padding-left: 8px; }
-[dir="rtl"] .pub__body { order: 1; }
 [dir="rtl"] .nav__brand { letter-spacing: 0; }
-/* Keep Latin tokens (venues, links, brand) rendering left-to-right inside RTL flow */
+[dir="rtl"] .timeline__item { border-left: none; border-right: 2px solid var(--border); padding-left: 0; padding-right: 22px; }
+[dir="rtl"] .timeline__item::before { left: auto; right: -7px; }
+[dir="rtl"] .awards li { padding-left: 0; padding-right: 22px; }
+[dir="rtl"] .awards li::before { left: auto; right: 0; }
+/* Keep Latin tokens (venues, links, BibTeX) rendering left-to-right inside RTL flow */
 [dir="rtl"] .badge, [dir="rtl"] .pub__authors, [dir="rtl"] .pub__links,
 [dir="rtl"] .contact__value, [dir="rtl"] .stat__num { direction: ltr; }
 [dir="rtl"] .pub__authors, [dir="rtl"] .pub__links { text-align: right; }
-
-@media (max-width: 860px) {
-  [dir="rtl"] .pub { grid-template-columns: 1fr; }
-}
 
 @media (max-width: 640px) {
   .nav__links {
@@ -266,7 +316,7 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
   .hero { padding: 48px 0 40px; }
   .cards, .cards--projects, .contact { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; gap: 18px; }
-  .pub { grid-template-columns: 1fr; gap: 8px; }
-  .pub__year { border-right: none; padding-right: 0; }
+  .news__item { grid-template-columns: 1fr; gap: 4px; padding: 14px 4px; }
   .footer__inner { flex-direction: column; text-align: center; }
 }
+[dir="rtl"] .nav__links a { text-align: right; }

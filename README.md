@@ -24,8 +24,9 @@ Plain, dependency-free static site — **HTML + CSS + JavaScript**. No build ste
 ## Features
 
 - Clean, modern academic design with light/dark mode (remembers your choice)
+- Bilingual English / Arabic with right-to-left layout (remembers your choice)
 - Fully mobile-responsive
-- Sections: About, Research Interests, Publications, Projects, Contact
+- Sections: About, News, Publications (by year, with BibTeX), Experience & Education, Awards, Projects, Contact
 - CV download button
 - Auto-deploy to GitHub Pages via GitHub Actions
 
