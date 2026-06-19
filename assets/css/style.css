@@ -297,10 +297,13 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
 [dir="rtl"] .timeline__item::before { left: auto; right: -7px; }
 [dir="rtl"] .awards li { padding-left: 0; padding-right: 22px; }
 [dir="rtl"] .awards li::before { left: auto; right: 0; }
-/* Keep Latin tokens (venues, links, BibTeX) rendering left-to-right inside RTL flow */
+/* Keep Latin tokens (venues, links, BibTeX) rendering left-to-right inside RTL flow,
+   but anchor them to the right edge so they line up with the Arabic text around them */
 [dir="rtl"] .badge, [dir="rtl"] .pub__authors, [dir="rtl"] .pub__links,
 [dir="rtl"] .contact__value, [dir="rtl"] .stat__num { direction: ltr; }
-[dir="rtl"] .pub__authors, [dir="rtl"] .pub__links { text-align: right; }
+[dir="rtl"] .pub__authors, [dir="rtl"] .pub__links,
+[dir="rtl"] .stat__num, [dir="rtl"] .contact__value { text-align: right; }
+[dir="rtl"] .stat { text-align: right; }
 
 @media (max-width: 640px) {
   .nav__links {
