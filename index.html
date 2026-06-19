@@ -1,17 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohamed Bayan Kmainasi — NLP &amp; Multimodal AI Research</title>
-  <meta name="description" content="Mohamed Bayan Kmainasi — Research Assistant in NLP and Multimodal AI at the Qatar Computing Research Institute (QCRI). Research on multimodal NLP, hateful meme detection, propaganda detection, Arabic language technology, and reinforcement learning for LLMs." />
+  <title>Mohamed Bayan Kmainasi (محمد بيان قميناسي) — NLP &amp; Multimodal AI</title>
+  <meta name="description" content="Mohamed Bayan Kmainasi (محمد بيان قميناسي) — Research Assistant in NLP and Multimodal AI at the Qatar Computing Research Institute (QCRI). Multimodal NLP, hateful meme detection, propaganda detection, Arabic language technology, and reinforcement learning for LLMs." />
   <meta name="author" content="Mohamed Bayan Kmainasi" />
+  <meta name="keywords" content="Mohamed Bayan Kmainasi, محمد بيان قميناسي, Mohamed Kmainasi, Bayan Kmainasi, QCRI, Qatar University, NLP, Natural Language Processing, Multimodal AI, Arabic NLP, hateful meme detection, propaganda detection, LLM, vision-language models" />
+  <link rel="canonical" href="https://mohamedbayan.github.io/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Mohamed Bayan Kmainasi — NLP &amp; Multimodal AI Research" />
+  <meta property="og:title" content="Mohamed Bayan Kmainasi (محمد بيان قميناسي) — NLP &amp; Multimodal AI" />
   <meta property="og:description" content="Research Assistant in NLP and Multimodal AI at QCRI. Multimodal NLP, hateful meme detection, propaganda detection, Arabic language technology, RL for LLMs." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/profile.jpg" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://mohamedbayan.github.io/" />
+  <meta property="og:image" content="https://mohamedbayan.github.io/assets/img/profile.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_AR" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Structured data: helps search engines link the page to both name spellings -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohamed Bayan Kmainasi",
+    "alternateName": ["محمد بيان قميناسي", "Mohamed Bayan", "Mohamed Kmainasi", "Bayan Kmainasi"],
+    "jobTitle": "Research Assistant in NLP and Multimodal AI",
+    "worksFor": { "@type": "Organization", "name": "Qatar Computing Research Institute (QCRI)" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Qatar University" },
+      { "@type": "CollegeOrUniversity", "name": "Al-Ahliyya Amman University" }
+    ],
+    "email": "mailto:mkmainasi@hbku.edu.qa",
+    "url": "https://mohamedbayan.github.io/",
+    "image": "https://mohamedbayan.github.io/assets/img/profile.jpg",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=h5tFJ7MAAAAJ&hl=en",
+      "https://github.com/MohamedBayan",
+      "https://huggingface.co/QCRI"
+    ],
+    "knowsAbout": ["Natural Language Processing", "Multimodal AI", "Hateful meme detection", "Propaganda detection", "Arabic language technology", "Reinforcement learning for large language models", "Vision-language models"]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -23,13 +54,14 @@
     <div class="container nav__inner">
       <a href="#top" class="nav__brand">MBK</a>
       <nav class="nav__links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#research" data-i18n="nav.research">Research</a>
+        <a href="#publications" data-i18n="nav.publications">Publications</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="nav__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language" title="العربية / English">ع</button>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
           <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -44,19 +76,20 @@
     <section class="hero" id="about">
       <div class="container hero__inner">
         <div class="hero__photo">
-          <img src="assets/img/profile.jpg" alt="Mohamed Bayan Kmainasi" loading="eager" />
+          <img src="assets/img/profile.jpg" alt="Mohamed Bayan Kmainasi — محمد بيان قميناسي" loading="eager" />
         </div>
         <div class="hero__text">
-          <p class="eyebrow">Research Assistant · NLP &amp; Multimodal AI</p>
-          <h1>Mohamed Bayan&nbsp;Kmainasi</h1>
-          <p class="lead">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Research Assistant · NLP &amp; Multimodal AI</p>
+          <h1 data-i18n="hero.h1">Mohamed Bayan&nbsp;Kmainasi</h1>
+          <p class="hero__name-alt" lang="ar" dir="rtl">محمد بيان قميناسي</p>
+          <p class="lead" data-i18n="hero.lead1">
             I am a Research Assistant in Natural Language Processing and Multimodal AI at the
             <a href="https://www.hbku.edu.qa/en/qcri" target="_blank" rel="noopener">Qatar Computing Research Institute (QCRI)</a>.
             My work centers on multimodal language understanding, combating digital
             disinformation, Arabic language technology, and reinforcement learning for
             post-training large language models.
           </p>
-          <p class="lead lead--muted">
+          <p class="lead lead--muted" data-i18n="hero.lead2">
             I recently completed my MSc in Computing at Qatar University (GPA 4.0/4.0) and
             hold a BSc in Computer Engineering (GPA 3.99/4.0, ranked 1st in class). My
             research has appeared at ACL-tier venues including NAACL, EMNLP, ACL, and WWW.
@@ -65,9 +98,9 @@
           <div class="hero__actions">
             <a class="btn btn--primary" href="Academic_CV.pdf" target="_blank" rel="noopener">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download CV
+              <span data-i18n="btn.cv">Download CV</span>
             </a>
-            <a class="btn btn--ghost" href="#contact">Get in touch</a>
+            <a class="btn btn--ghost" href="#contact" data-i18n="btn.contact">Get in touch</a>
           </div>
 
           <ul class="hero__links">
@@ -81,10 +114,10 @@
 
       <div class="container">
         <div class="stats">
-          <div class="stat"><span class="stat__num">4.0</span><span class="stat__label">MSc GPA · Qatar University</span></div>
-          <div class="stat"><span class="stat__num">3.99</span><span class="stat__label">BSc GPA · Ranked 1st</span></div>
-          <div class="stat"><span class="stat__num">10+</span><span class="stat__label">Peer-reviewed publications</span></div>
-          <div class="stat"><span class="stat__num">NAACL · EMNLP · ACL · WWW</span><span class="stat__label">Publication venues</span></div>
+          <div class="stat"><span class="stat__num">4.0</span><span class="stat__label" data-i18n="stat.msc">MSc GPA · Qatar University</span></div>
+          <div class="stat"><span class="stat__num">3.99</span><span class="stat__label" data-i18n="stat.bsc">BSc GPA · Ranked 1st</span></div>
+          <div class="stat"><span class="stat__num">11</span><span class="stat__label" data-i18n="stat.pubs">Peer-reviewed publications</span></div>
+          <div class="stat"><span class="stat__num">NAACL · EMNLP · ACL · WWW</span><span class="stat__label" data-i18n="stat.venues">Publication venues</span></div>
         </div>
       </div>
     </section>
@@ -92,8 +125,8 @@
     <!-- Research interests -->
     <section class="section" id="research">
       <div class="container">
-        <h2 class="section__title">Research Interests</h2>
-        <p class="section__intro">
+        <h2 class="section__title" data-i18n="research.title">Research Interests</h2>
+        <p class="section__intro" data-i18n="research.intro">
           I build and study models that understand language and vision jointly, with a focus
           on socially impactful problems — disinformation, hateful content, and equitable
           technology for Arabic and other under-served languages.
@@ -101,23 +134,23 @@
         <div class="cards">
           <article class="card">
             <div class="card__icon">🖼️</div>
-            <h3>Multimodal NLP</h3>
-            <p>Vision-language models for memes, hateful content detection, and propaganda analysis across languages and modalities.</p>
+            <h3 data-i18n="research.c1.t">Multimodal NLP</h3>
+            <p data-i18n="research.c1.d">Vision-language models for memes, hateful content detection, and propaganda analysis across languages and modalities.</p>
           </article>
           <article class="card">
             <div class="card__icon">🛡️</div>
-            <h3>Content Moderation &amp; Disinformation</h3>
-            <p>Explainable detection of hateful and propagandistic content to support safer, more trustworthy online ecosystems.</p>
+            <h3 data-i18n="research.c2.t">Content Moderation &amp; Disinformation</h3>
+            <p data-i18n="research.c2.d">Explainable detection of hateful and propagandistic content to support safer, more trustworthy online ecosystems.</p>
           </article>
           <article class="card">
             <div class="card__icon">🌍</div>
-            <h3>Arabic Language Technology</h3>
-            <p>Datasets, benchmarks, and specialized multilingual LLMs that advance Arabic and low-resource NLP.</p>
+            <h3 data-i18n="research.c3.t">Arabic Language Technology</h3>
+            <p data-i18n="research.c3.d">Datasets, benchmarks, and specialized multilingual LLMs that advance Arabic and low-resource NLP.</p>
           </article>
           <article class="card">
             <div class="card__icon">🎯</div>
-            <h3>RL for LLM Post-Training</h3>
-            <p>Reinforcement learning (GRPO) with chain-of-thought supervision for reasoning and explainable multimodal detection.</p>
+            <h3 data-i18n="research.c4.t">RL for LLM Post-Training</h3>
+            <p data-i18n="research.c4.d">Reinforcement learning (GRPO) with chain-of-thought supervision for reasoning and explainable multimodal detection.</p>
           </article>
         </div>
       </div>
@@ -126,8 +159,8 @@
     <!-- Publications -->
     <section class="section section--alt" id="publications">
       <div class="container">
-        <h2 class="section__title">Selected Publications</h2>
-        <p class="section__intro">
+        <h2 class="section__title" data-i18n="publications.title">Selected Publications</h2>
+        <p class="section__intro" data-i18n="publications.intro">
           A selection of peer-reviewed and preprint work. For the complete and most up-to-date
           list, see my
           <a href="https://scholar.google.com/citations?user=h5tFJ7MAAAAJ&hl=en" target="_blank" rel="noopener">Google&nbsp;Scholar</a> profile.
@@ -139,7 +172,7 @@
             <div class="pub__body">
               <h3 class="pub__title">MemeLens: Multilingual Multitask VLMs for Memes</h3>
               <p class="pub__authors">A. E. Shahroor, <b>M. B. Kmainasi</b>, A. Hasnat, D. Dimitrov, G. Da San Martino, P. Nakov, F. Alam</p>
-              <p class="pub__venue"><span class="badge badge--top">ACL 2026 Findings</span> Multilingual, multimodal meme-understanding benchmark and models.</p>
+              <p class="pub__venue"><span class="badge badge--top">ACL 2026 Findings</span> <span data-i18n="pub.memelens">Multilingual, multimodal meme-understanding benchmark and models.</span></p>
               <div class="pub__links">
                 <a href="https://arxiv.org/abs/2601.12539" target="_blank" rel="noopener">arXiv</a>
                 <a href="https://huggingface.co/QCRI/MemeLens-VLM" target="_blank" rel="noopener">Model</a>
@@ -153,9 +186,10 @@
             <div class="pub__body">
               <h3 class="pub__title">LlamaLens: Specialized Multilingual LLM for Analyzing News and Social Media Content</h3>
               <p class="pub__authors"><b>M. B. Kmainasi</b>, A. E. Shahroor, M. Hasanain, S. R. Laskar, N. Hassan, F. Alam</p>
-              <p class="pub__venue"><span class="badge badge--top">NAACL 2025 Findings</span> Instruction-tuned multilingual LLM for news &amp; social-media analysis.</p>
+              <p class="pub__venue"><span class="badge badge--top">NAACL 2025 Findings</span> <span data-i18n="pub.llamalens">Instruction-tuned multilingual LLM for news &amp; social-media analysis.</span></p>
               <div class="pub__links">
-                <a href="https://aclanthology.org/2025.findings-naacl.314/" target="_blank" rel="noopener">ACL Anthology</a>
+                <a href="https://aclanthology.org/2025.findings-naacl.313/" target="_blank" rel="noopener">ACL Anthology</a>
+                <a href="https://arxiv.org/abs/2410.15308" target="_blank" rel="noopener">arXiv</a>
                 <a href="https://huggingface.co/QCRI/LlamaLens" target="_blank" rel="noopener">Model</a>
                 <a href="https://huggingface.co/datasets/QCRI/LlamaLens-English" target="_blank" rel="noopener">Dataset</a>
               </div>
@@ -167,8 +201,10 @@
             <div class="pub__body">
               <h3 class="pub__title">MemeIntel: Explainable Detection of Propagandistic and Hateful Memes</h3>
               <p class="pub__authors"><b>M. B. Kmainasi</b>, A. Hasnat, M. A. Hasan, A. E. Shahroor, F. Alam</p>
-              <p class="pub__venue"><span class="badge badge--top">EMNLP 2025</span> Explainable multimodal detection with a dedicated instruction dataset.</p>
+              <p class="pub__venue"><span class="badge badge--top">EMNLP 2025</span> <span data-i18n="pub.memeintel">Explainable multimodal detection with a dedicated instruction dataset.</span></p>
               <div class="pub__links">
+                <a href="https://aclanthology.org/2025.emnlp-main.1539/" target="_blank" rel="noopener">ACL Anthology</a>
+                <a href="https://arxiv.org/abs/2502.16612" target="_blank" rel="noopener">arXiv</a>
                 <a href="https://github.com/MohamedBayan/MemeIntel" target="_blank" rel="noopener">Code</a>
                 <a href="https://huggingface.co/datasets/QCRI/MemeXplain" target="_blank" rel="noopener">Dataset</a>
               </div>
@@ -180,8 +216,10 @@
             <div class="pub__body">
               <h3 class="pub__title">PropXplain: Can LLMs Enable Explainable Propaganda Detection?</h3>
               <p class="pub__authors">M. Hasanain, M. A. Hasan, <b>M. B. Kmainasi</b>, E. Sartori, A. E. Shahroor, et al.</p>
-              <p class="pub__venue"><span class="badge badge--top">EMNLP 2025 Findings</span> LLM-driven explainable propaganda detection.</p>
+              <p class="pub__venue"><span class="badge badge--top">EMNLP 2025 Findings</span> <span data-i18n="pub.propxplain">LLM-driven explainable propaganda detection.</span></p>
               <div class="pub__links">
+                <a href="https://aclanthology.org/2025.findings-emnlp.1296/" target="_blank" rel="noopener">ACL Anthology</a>
+                <a href="https://arxiv.org/abs/2502.16550" target="_blank" rel="noopener">arXiv</a>
                 <a href="https://huggingface.co/datasets/QCRI/PropXplain" target="_blank" rel="noopener">Dataset</a>
               </div>
             </div>
@@ -192,9 +230,10 @@
             <div class="pub__body">
               <h3 class="pub__title">Can Thinking Models Think to Detect Hateful Memes?</h3>
               <p class="pub__authors"><b>M. B. Kmainasi</b>, M. Kutlu, A. E. Shahroor, A. Hasnat, F. Alam</p>
-              <p class="pub__venue"><span class="badge badge--top">WWW 2026 Companion</span> Reasoning ("thinking") models for hateful-meme detection.</p>
+              <p class="pub__venue"><span class="badge badge--top">WWW 2026 Companion</span> <span data-i18n="pub.thinking">Reasoning ("thinking") models for hateful-meme detection.</span></p>
               <div class="pub__links">
-                <a href="https://dl.acm.org/doi/proceedings/10.1145/3701716" target="_blank" rel="noopener">ACM</a>
+                <a href="https://dl.acm.org/doi/10.1145/3774905.3795465" target="_blank" rel="noopener">ACM</a>
+                <a href="https://arxiv.org/abs/2603.01225" target="_blank" rel="noopener">arXiv</a>
               </div>
             </div>
           </li>
@@ -204,7 +243,7 @@
             <div class="pub__body">
               <h3 class="pub__title">Adapting Reinforcement Learning with Chain-of-Thought Supervision for Explainable Detection of Hateful and Propagandistic Memes</h3>
               <p class="pub__authors"><b>M. B. Kmainasi</b>, M. Kutlu, A. E. Shahroor, A. Hasnat, F. Alam</p>
-              <p class="pub__venue"><span class="badge">Preprint</span> GRPO + chain-of-thought for explainable multimodal detection.</p>
+              <p class="pub__venue"><span class="badge">Preprint</span> <span data-i18n="pub.rlcot">GRPO + chain-of-thought for explainable multimodal detection.</span></p>
               <div class="pub__links">
                 <a href="https://arxiv.org/abs/2606.15307" target="_blank" rel="noopener">arXiv</a>
                 <a href="https://github.com/MohamedBayan/MemeReason" target="_blank" rel="noopener">Code</a>
@@ -217,7 +256,7 @@
             <div class="pub__body">
               <h3 class="pub__title">CritiSense: Critical Digital Literacy and Resilience Against Misinformation</h3>
               <p class="pub__authors">F. Alam, F. Ahmad, A. E. Shahroor, <b>M. B. Kmainasi</b>, E. Sartori, G. Da San Martino, et al.</p>
-              <p class="pub__venue"><span class="badge">Preprint · ACL 2026 (system demo, under review)</span> Tools for critical digital literacy and misinformation resilience.</p>
+              <p class="pub__venue"><span class="badge">Preprint · ACL 2026 (system demo, under review)</span> <span data-i18n="pub.critisense">Tools for critical digital literacy and misinformation resilience.</span></p>
               <div class="pub__links">
                 <a href="https://arxiv.org/abs/2603.16672" target="_blank" rel="noopener">arXiv</a>
               </div>
@@ -229,7 +268,7 @@
             <div class="pub__body">
               <h3 class="pub__title">EverydayMMQA: A Multilingual and Multimodal Framework for Culturally Grounded Spoken Visual QA</h3>
               <p class="pub__authors">F. Alam, A. E. Shahroor, M. A. Hasan, Z. S. Ali, H. H. Bhatti, <b>M. B. Kmainasi</b>, et al.</p>
-              <p class="pub__venue"><span class="badge">Preprint · ICML 2026 (under review)</span> Culturally grounded spoken visual question answering.</p>
+              <p class="pub__venue"><span class="badge">Preprint · ICML 2026 (under review)</span> <span data-i18n="pub.everyday">Culturally grounded spoken visual question answering.</span></p>
               <div class="pub__links">
                 <a href="https://arxiv.org/abs/2510.06371" target="_blank" rel="noopener">arXiv</a>
               </div>
@@ -241,9 +280,10 @@
             <div class="pub__body">
               <h3 class="pub__title">Native vs Non-Native Language Prompting: A Comparative Analysis</h3>
               <p class="pub__authors"><b>M. B. Kmainasi</b>, R. Khan, A. E. Shahroor, B. Bendou, M. Hasanain, F. Alam</p>
-              <p class="pub__venue"><span class="badge">WISE 2024</span> Most-cited work · comparative study of prompting in native vs non-native languages.</p>
+              <p class="pub__venue"><span class="badge">WISE 2024</span> <span data-i18n="pub.native">Most-cited work · comparative study of prompting in native vs non-native languages.</span></p>
               <div class="pub__links">
-                <a href="https://link.springer.com/chapter/10.1007/978-981-96-0567-5_29" target="_blank" rel="noopener">Springer</a>
+                <a href="https://link.springer.com/chapter/10.1007/978-981-96-0576-7_30" target="_blank" rel="noopener">Springer</a>
+                <a href="https://arxiv.org/abs/2409.07054" target="_blank" rel="noopener">arXiv</a>
               </div>
             </div>
           </li>
@@ -253,9 +293,21 @@
             <div class="pub__body">
               <h3 class="pub__title">Can Large Language Models Predict the Outcome of Judicial Decisions?</h3>
               <p class="pub__authors"><b>M. B. Kmainasi</b>, A. E. Shahroor, A. Al-Ghraibah</p>
-              <p class="pub__venue"><span class="badge">Preprint</span> LLMs for Arabic legal judgment prediction.</p>
+              <p class="pub__venue"><span class="badge">Preprint</span> <span data-i18n="pub.judicial">LLMs for Arabic legal judgment prediction.</span></p>
               <div class="pub__links">
                 <a href="https://arxiv.org/abs/2501.09768" target="_blank" rel="noopener">arXiv</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="pub">
+            <div class="pub__year">2024</div>
+            <div class="pub__body">
+              <h3 class="pub__title">Automated Detection of Lung Cancer Levels Based on Patient's Lifestyle Information</h3>
+              <p class="pub__authors">A. Al-Ghraibah, A. Al-Abbas, <b>M. B. Kmainasi</b>, I. E. Mustafa, K. Brmo</p>
+              <p class="pub__venue"><span class="badge">IEEE · JIBEC 2024</span> <span data-i18n="pub.lung">Machine learning for lung-cancer level detection from lifestyle data.</span></p>
+              <div class="pub__links">
+                <a href="https://ieeexplore.ieee.org/document/10932129" target="_blank" rel="noopener">IEEE Xplore</a>
               </div>
             </div>
           </li>
@@ -266,50 +318,50 @@
     <!-- Projects -->
     <section class="section" id="projects">
       <div class="container">
-        <h2 class="section__title">Projects &amp; Open Resources</h2>
-        <p class="section__intro">
+        <h2 class="section__title" data-i18n="projects.title">Projects &amp; Open Resources</h2>
+        <p class="section__intro" data-i18n="projects.intro">
           Open datasets, models, and systems released alongside my research. Most artifacts
           are publicly available on GitHub and Hugging&nbsp;Face.
         </p>
         <div class="cards cards--projects">
           <article class="card card--project">
             <h3>ArHate / ArHateMemes</h3>
-            <p>Arabic hate-speech datasets and multimodal meme resources for content-moderation research in Arabic.</p>
+            <p data-i18n="proj.arhate">Arabic hate-speech datasets and multimodal meme resources for content-moderation research in Arabic.</p>
             <div class="card__tags"><span>Arabic NLP</span><span>Dataset</span><span>Hate Speech</span></div>
             <div class="pub__links"><a href="https://huggingface.co/QCRI" target="_blank" rel="noopener">Hugging Face</a></div>
           </article>
 
           <article class="card card--project">
             <h3>MemeAgent</h3>
-            <p>A tool-augmented vision-language agent trained with GRPO to reason over memes and invoke external tools for detection.</p>
+            <p data-i18n="proj.memeagent">A tool-augmented vision-language agent trained with GRPO to reason over memes and invoke external tools for detection.</p>
             <div class="card__tags"><span>VLM Agent</span><span>GRPO</span><span>Multimodal</span></div>
             <div class="pub__links"><a href="https://github.com/MohamedBayan/MemeReason" target="_blank" rel="noopener">GitHub</a></div>
           </article>
 
           <article class="card card--project">
             <h3>GRPO + CoT Meme Detection</h3>
-            <p>Reinforcement-learning system using GRPO with chain-of-thought supervision for explainable hateful &amp; propagandistic meme detection.</p>
+            <p data-i18n="proj.grpo">Reinforcement-learning system using GRPO with chain-of-thought supervision for explainable hateful &amp; propagandistic meme detection.</p>
             <div class="card__tags"><span>RL</span><span>Chain-of-Thought</span><span>Explainability</span></div>
             <div class="pub__links"><a href="https://arxiv.org/abs/2606.15307" target="_blank" rel="noopener">Paper</a><a href="https://github.com/MohamedBayan/MemeReason" target="_blank" rel="noopener">Code</a></div>
           </article>
 
           <article class="card card--project">
             <h3>LlamaLens</h3>
-            <p>Specialized multilingual LLM and instruction datasets (Arabic, English, Hindi) for news and social-media content analysis.</p>
+            <p data-i18n="proj.llamalens">Specialized multilingual LLM and instruction datasets (Arabic, English, Hindi) for news and social-media content analysis.</p>
             <div class="card__tags"><span>Multilingual LLM</span><span>Fine-tuning</span></div>
             <div class="pub__links"><a href="https://huggingface.co/QCRI/LlamaLens" target="_blank" rel="noopener">Model</a><a href="https://huggingface.co/datasets/QCRI/LlamaLens-Arabic" target="_blank" rel="noopener">Datasets</a></div>
           </article>
 
           <article class="card card--project">
             <h3>MemeIntel &amp; MemeLens</h3>
-            <p>Explainable multimodal meme analysis — instruction datasets, the MemeLens-VLM model, and a multilingual benchmark.</p>
+            <p data-i18n="proj.memeintel">Explainable multimodal meme analysis — instruction datasets, the MemeLens-VLM model, and a multilingual benchmark.</p>
             <div class="card__tags"><span>Multimodal</span><span>Benchmark</span><span>VLM</span></div>
             <div class="pub__links"><a href="https://github.com/MohamedBayan/MemeIntel" target="_blank" rel="noopener">Code</a><a href="https://huggingface.co/QCRI/MemeLens-VLM" target="_blank" rel="noopener">Model</a></div>
           </article>
 
           <article class="card card--project">
             <h3>LLMeBench</h3>
-            <p>Contributor to QCRI's flexible benchmarking framework for evaluating LLMs across many tasks and languages.</p>
+            <p data-i18n="proj.llmebench">Contributor to QCRI's flexible benchmarking framework for evaluating LLMs across many tasks and languages.</p>
             <div class="card__tags"><span>Benchmarking</span><span>Open Source</span></div>
             <div class="pub__links"><a href="https://github.com/qcri/LLMeBench/" target="_blank" rel="noopener">GitHub</a></div>
           </article>
@@ -320,14 +372,14 @@
     <!-- Contact -->
     <section class="section section--alt" id="contact">
       <div class="container">
-        <h2 class="section__title">Contact</h2>
-        <p class="section__intro">
+        <h2 class="section__title" data-i18n="contact.title">Contact</h2>
+        <p class="section__intro" data-i18n="contact.intro">
           I'm always happy to discuss multimodal NLP, Arabic language technology, and
           research collaborations. The best way to reach me is by email.
         </p>
         <div class="contact">
           <a class="contact__card" href="mailto:mkmainasi@hbku.edu.qa">
-            <span class="contact__label">Email</span>
+            <span class="contact__label" data-i18n="contact.email">Email</span>
             <span class="contact__value">mkmainasi@hbku.edu.qa</span>
           </a>
           <a class="contact__card" href="https://scholar.google.com/citations?user=h5tFJ7MAAAAJ&hl=en" target="_blank" rel="noopener">
@@ -343,15 +395,15 @@
             <span class="contact__value">QCRI</span>
           </a>
         </div>
-        <p class="contact__location">📍 Doha, Qatar · Qatar Computing Research Institute (QCRI)</p>
+        <p class="contact__location" data-i18n="contact.location">📍 Doha, Qatar · Qatar Computing Research Institute (QCRI)</p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>© <span id="year"></span> Mohamed Bayan Kmainasi</p>
-      <p class="footer__note">Built with plain HTML, CSS &amp; JS · Deployed on GitHub Pages</p>
+      <p>© <span id="year"></span> Mohamed Bayan Kmainasi · محمد بيان قميناسي</p>
+      <p class="footer__note" data-i18n="footer.note">Built with plain HTML, CSS &amp; JS · Deployed on GitHub Pages</p>
     </div>
   </footer>
 
